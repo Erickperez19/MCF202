@@ -31,11 +31,6 @@ hist(dbh)
 
 moda=function(x)  
   
-  #Función que encuentra la moda de un vector x
-  m1 <- sort(table(x),decreasing=T)
-moda <- names(m1[m1==m1[1]])
-moda <- as.numeric(moda)
-return(moda)
 
 quantile (dbh, 0.25)
 quantile(dbh, 0.5)      
