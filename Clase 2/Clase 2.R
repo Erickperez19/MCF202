@@ -36,4 +36,4 @@ t.test(vivero$IE ~ vivero$Tratamiento, var.equal = T)
 
 #Existe una diferancia significativa  ante el IE de las plantulas fertilizadas
 #El valor de p (0.004) comprueba nuestra hipotesis de que el fertilizante "power" 
-#mejora el IE
+#mejora el IE 
