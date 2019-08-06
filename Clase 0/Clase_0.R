@@ -31,3 +31,27 @@ sd(diametro)
 
 boxplot(diametro, horizontal = TRUE, col = "blue", main="diametro",
         xlab="D (cm)")
+# Importar excel ----------------------------------------------------------
+
+DB_alturas <- read.csv("C:/MCF202_2019/Datos/alturas.csv", header = T)
+head(DB_alturas)
+boxplot(DB_alturas$crecimiento)
+boxplot(DB_alturas$crecimiento ~ DB_alturas$tratamiento, col ="blue",
+        xlab= "tratamiento", ylab= "crecimiento")
+mean(DB_alturas$crecimiento)
+
+# Restrincciones ----------------------------------------------------------
+
+sum(DB_alturas$crecimiento < mean(DB_alturas$crecimiento))
+
+#Excluir el Tratamiento A
+Trat_A <- DB_alturas[!(DB_alturas$tratamiento == "TA"),]
+
+mean(Trat_A$crecimiento)
+
+
+# Submuestra --------------------------------------------------------------
+
+T.mean <- subset(DB_alturas, crecimiento >= mean(DB_alturas$crecimiento))
+boxplot(T.mean$crecimiento ~ T.mean$tratamiento)
+
