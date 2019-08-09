@@ -5,7 +5,7 @@
 # ANOVA -------------------------------------------------------------------
 
 #ho no existe diferencia entre los tratamientos
-#ha existe una diferencia entre los tratamientos 
+#ha al menos un grupo es difernete a los demas 
 
 arena <- c(6, 10, 8, 6, 14, 17, 9, 11, 7, 11)
 arcilla <- c(17, 15, 3, 11, 14, 12, 12, 8, 10, 13)
@@ -52,3 +52,5 @@ TukeyHSD(aov.suelo, conf.level = 0.95)
 ##upr rango mayor
 
 plot(TukeyHSD(aov.suelo))
+summary.lm(aov.suelo)
+
