@@ -42,6 +42,38 @@ cor.test(DB_ebanos$altura, DB_ebanos$diametro)
 
 # Regresion lineal --------------------------------------------------------
 
+##ho no es significativa la prediccion
+##ha es significativa la prediccion
+
+#comando "lm" para realizar la regresion
+lm.erup <-lm(erupciones$eruptions ~ erupciones$waiting)
+## primero es la independiente 
+
+plot(erupciones$waiting, erupciones$eruptions, pch=1, col= "blue", 
+     xlab = "Tiempo de espera (min)",
+     ylab= "Duracion (min)")
+abline(lm.erup, col= "black")
+## en la grafica primero es x y despues y
+##abline es para que salga la linea.
+
+text(52, 4.5, "Y = -1.87 + 0.07*x", pos= 1)
+text(52, 4, "r^2= 0.81")
+lm.erup
+## informacion de alfa y beta.
+
+##los datos deben de estar bien distibuidos por abajo y arriba de la linea.
+
+summary(lm.erup)
+## los reiduales es la diferencia que existe  entre el valor observado 
+##y el valor predecido.
+## cuando el valor observado es mayor , es positivo 
+
+length(erupciones$eruptions)
+
+y.60 <- -1.87 + 0.07*60
+y.60
 
 
+y.80 <- -1.87 + 0.07*80
+y.80
 
