@@ -77,3 +77,37 @@ y.60
 y.80 <- -1.87 + 0.07*80
 y.80
 
+
+# Datos de regresion ------------------------------------------------------
+
+espera <- erupciones$waiting
+duracion <- erupciones$eruptions
+
+res <- resid(lm.erup)
+res
+pre <- fitted(lm.erup)
+
+res.2 <- res^2 
+
+cuadro <- data.frame(espera, duracion, pre, res, res.2)
+
+cuadro <- round(data.frame(espera, duracion, pre, res, res.2),4)
+
+SSE <- sum((duracion - pre)^2)
+SSE
+
+
+vari <- SSE/ (length(erupciones$waiting)-2)
+vari
+
+
+# Prueba de hipotesis de la regresion -------------------------------------
+
+an.erup <- anova(lm.erup)
+an.erup
+
+##media de cuadrado= suma de cuadrado/ grados de libertad 
+
+
+## se acepta la hipotesis alternativa quiere decir que el modelo de regresion
+##son significativos 
