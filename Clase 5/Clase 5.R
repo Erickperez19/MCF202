@@ -54,3 +54,5 @@ TukeyHSD(aov.suelo, conf.level = 0.95)
 plot(TukeyHSD(aov.suelo))
 summary.lm(aov.suelo)
 
+## se acpeta la hipotesis alternativa ya que, al menos uno de los grupos
+## es diferente a los demas 
