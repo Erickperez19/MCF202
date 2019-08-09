@@ -19,8 +19,6 @@ head(prod)
 
 tapply(prod$y.ton, prod$suelo, mean)
 tapply(prod$y.ton, prod$suelo, var)
-## la varianza son diferentes
-
 
 shapiro.test(prod$y.ton)
 
@@ -28,3 +26,9 @@ shapiro.test(prod$y.ton)
 bartlett.test(prod$y.ton, prod$suelo)
 
 fligner.test(prod$y.ton, prod$suelo)
+## las varianzas son homogeneas
+
+
+boxplot(prod$y.ton ~ prod$suelo, xlab = "Tipo de suelo",
+        ylab = "Ton/ha", col= "blue")
+
