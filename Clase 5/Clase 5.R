@@ -31,4 +31,24 @@ fligner.test(prod$y.ton, prod$suelo)
 
 boxplot(prod$y.ton ~ prod$suelo, xlab = "Tipo de suelo",
         ylab = "Ton/ha", col= "blue")
+##ANOVA
+aov.suelo <- aov(prod$y.ton ~ prod$suelo)
+aov.suelo
+summary(aov.suelo)
 
+par(mfrow=c(2,2))
+plot(aov(prod$y.ton ~ prod$suelo))
+par(mfrow=c(1,1))
+## si los datos estan cerca de la lina central en la grafica "nomal Q-Q"
+## quiere decir que los datos vienen de una distibucion normal
+
+
+##prueba de tukey sirve para saber cual de los tratamientos es diferente,
+## 3 o mas medias
+
+TukeyHSD(aov.suelo, conf.level = 0.95)
+
+##lwr rango menor
+##upr rango mayor
+
+plot(TukeyHSD(aov.suelo))
