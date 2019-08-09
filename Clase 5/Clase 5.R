@@ -56,3 +56,4 @@ summary.lm(aov.suelo)
 
 ## se acpeta la hipotesis alternativa ya que, al menos uno de los grupos
 ## es diferente a los demas 
+
