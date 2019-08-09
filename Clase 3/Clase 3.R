@@ -60,3 +60,6 @@ cost.T
 pt(cost.T, df = n-1)
 
 t.test(costal, mu= 80, alternative = "less")
+
+
+
