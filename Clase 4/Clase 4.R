@@ -103,7 +103,7 @@ vari
 
 # Prueba de hipotesis de la regresion -------------------------------------
 
-an.erup <- anova(lm.erup)
+an.erup <- anova(lm.erup) 
 an.erup
 
 ##media de cuadrado= suma de cuadrado/ grados de libertad 
